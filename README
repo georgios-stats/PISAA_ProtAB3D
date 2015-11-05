@@ -3,6 +3,9 @@ DESCRIPTION :
 
 A C code implementation of PISAA for minimising the potential energy of 3D AB protein model. 
 
+PISAA is a stochastic optimisation algorithm that aims at overcoming the 
+local trapping issue.
+
 The data-sets with the 13-, 23-, 34-, and 55- mer sequences of the AB models are included. 
 
 Karagiannis, G., Konomi, B., Lin, G., & Liang F. (under revision). 
