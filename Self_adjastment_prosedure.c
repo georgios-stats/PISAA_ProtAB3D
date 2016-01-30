@@ -38,6 +38,8 @@
 
 #include <math.h>
 
+#include "Self_adjastment_prosedure.h"
+
 #if (__SELFADJTYPE__==1)
 
 void self_adj_grid_points( double *grid_points, int grid_size,

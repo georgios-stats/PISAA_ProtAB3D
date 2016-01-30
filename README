@@ -60,24 +60,42 @@ makefile                    : Makefile
 
 pisaa.c                     : The main function
 
-Crossover_int_operations.c  : Crossover operations
+Crossover_operations.c      : Crossover operations
+Crossover_operations.h      : Header files
 
-Mutation_int_operations.c   : Mutation operations
+Mutation_operations.c       : Mutation operations
+Mutation_operations.h       : Header files
 
-MH_int_updates.c            : Metropolis-Hastings updates to generate a seed
+HitAndRun_update.c          : Metropolis-Hastings updates to generate a seed
+HitAndRun_update.h          : Header files
 
 Self_adjastment_prosedure.c : Functions related to the self adjusting mechanism
+Self_adjastment_prosedure.h : Header files
 
-cost_ising2D.c              : The cost function
+cost_protein3D.c            : The cost function
+cost_protein3D.h            : Header files
 
 uniformrng.c                : Uniform random number generator
+normalrng.c                 : Normal random number generator
+uniformdirectionrng.c       : Random number in uniform disc generator
+RNG.h                       : Header files
 
 nrutil.c                    : Numerical recipes functions to treat array 
                                 allocations
+nrutil.h                    : Header files
+
+data.ABseq.13               : Data file
+data.ABseq.2                : Data file
+data.ABseq.21               : Data file
+data.ABseq.3                : Data file
+data.ABseq.34               : Data file
+data.ABseq.5                : Data file
+data.ABseq.55               : Data file
+data.ABseq.8                : Data file
 
 output_files                : Folder for the output of the program 
 
-exe                         : Binary file  
+exe                         : Binary file    
 
       input flags :
       
@@ -146,8 +164,6 @@ FUTURE UPDATES :
 - Add a flag that allows one to choose to adaptively adjust the mutation and crossover operation proposals.
 
 - Make the code use openMP and openMPI.
-
-- Tidy up the declarations in header files properly.
 
 - Remove the code related to mh0 option.
 

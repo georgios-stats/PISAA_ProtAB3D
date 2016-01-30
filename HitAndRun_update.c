@@ -34,10 +34,9 @@
 
 #include <math.h>
 
-void uniformdirectionrng(double *d, int n) ;
-double uniformrng(void) ;
-double normalrng(void) ;
-double cost(double*,int) ;
+#include "RNG.h"
+#include "cost_protein3D.h"
+#include "HitAndRun_update.h"
 
 void MH_HitAndRun( double *z, double *fz,
 					int N_dimension, double temp,

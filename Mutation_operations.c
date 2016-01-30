@@ -34,17 +34,10 @@
 
 #include <math.h>
 
-double uniformrng( void ) ;
-
-double normalrng( void ) ;
-
-int integerrng( int, int ) ;
-
-void uniformdirectionrng(double *, int) ;
-
-double cost(double*,int) ;
-
-void self_adj_index_search(int*,double,double*,int) ;
+#include "RNG.h"
+#include "cost_protein3D.h"
+#include "Self_adjastment_prosedure.h"
+#include "Mutation_operations.h"
 
 #define ES_MH 0.5
 

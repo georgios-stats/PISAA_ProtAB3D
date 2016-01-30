@@ -17,7 +17,7 @@
 */
 
 /*
- * Georgios Karagiannis 
+ * Georgios Karagiannis
  * Postdoctoral research associate
  * Department of Mathematics, Purdue University
  * 150 N. University Street
@@ -31,46 +31,36 @@
 */
 
 
+void CO_select_forward_0(double *, int *, int *, int ) ;
 
+void CO_select_backward_0(double *, int ) ;
 
-/* declare the headers */
+void CO_select_forward_1(double *, int *, int *, double *, int , double ) ;
 
-#include <stdlib.h>
-#include <math.h>
-#include "RNG.h"
+void CO_select_backward_1(double *, int , int , double *, int , double ) ;
 
-/* initializes a seed */
+void CO_select_forward_2(double *, int *, int *, double *, int , double ) ;
 
-void setseedrng(unsigned long s) {
-	srand( s ) ;
-}
+void CO_select_backward_2(double *, int , int , double *, int , double ) ;
 
-/* DEFAULT : generates a random number on (0,1)-real-interval */
+void CO_select_forward_3(double *, int *, int *, double *, int , double ) ;
 
-double uniformrng(void) {
-	double rnd ;
+void CO_select_backward_3(double *, int , int , double *, int , double ) ;
 
-	do {
-		rnd = (double) ( rand() / ( RAND_MAX + 1.0 ) ) ;
-	} while ( rnd == 0.0 || rnd == 1.0 ) ;
+void Crossover_snooker(double **, double *,
+		int , int ,
+		double *, double *, int ,
+		double , double , double *,
+		double *) ;
 
-	return rnd ;
-}
+void Crossover_linear(double **, double *,
+		int , int ,
+		double *, double *, int ,
+		double , double , double *,
+		double *) ;
 
-/* DEFAULT : generates a random number on [a,b]-real-interval */
-
-int integerrng(int a, int b) {
-		return (int) ( a +floor(uniformrng()*(b-a+1)) ) ;
-}
-
-
-
-
-
-
-
-
-
-
-
-
+void Crossover_Kpoint(double **, double *,
+		int , int ,
+		double *, double *, int ,
+		double , double *,
+		double *, double * ) ;

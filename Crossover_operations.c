@@ -34,17 +34,13 @@
 
 #include <math.h>
 
-double uniformrng( void ) ;
+#include "RNG.h"
+#include "cost_protein3D.h"
+#include "Self_adjastment_prosedure.h"
+#include "Crossover_operations.h"
 
-int integerrng(int, int) ;
-
-double normalrng( void ) ;
-
-double cost(double*,int) ;
-
-void self_adj_index_search(int*,double,double*,int) ;
-
-void CO_select_forward_0(double *prob, int *n1, int *n2, int N_population){
+void CO_select_forward_0(double *prob, int *n1, int *n2, int N_population)
+{
 
 	/* draw n1 */
 
@@ -61,12 +57,14 @@ void CO_select_forward_0(double *prob, int *n1, int *n2, int N_population){
 
 }
 
-void CO_select_backward_0(double *prob, int N_population){
+void CO_select_backward_0(double *prob, int N_population)
+{
 	*prob = -log((double) N_population-1) -log((double) N_population) ;
 }
 
 void CO_select_forward_1(double *prob, int *n1, int *n2,
-				double *fx, int N_population, double temp){
+				double *fx, int N_population, double temp)
+{
 
 /*	IN ORDER TO OVERCOME THE PDECISION ERRORS IN EXP(),
 			WE APPLY THE MINUS-MAXIMUM TRICK,
@@ -117,7 +115,8 @@ void CO_select_forward_1(double *prob, int *n1, int *n2,
 }
 
 void CO_select_backward_1(double *prob, int n1, int n2,
-				double *fx, int N_population, double temp){
+				double *fx, int N_population, double temp)
+{
 
 	/*	IN ORDER TO OVERCOME THE PDECISION ERRORS IN EXP(),
 				WE APPLY THE MINUS-MAXIMUM TRICK,
@@ -147,7 +146,8 @@ void CO_select_backward_1(double *prob, int n1, int n2,
 }
 
 void CO_select_forward_2(double *prob, int *n1, int *n2,
-							double *fx, int N_population, double temp){
+							double *fx, int N_population, double temp)
+{
 
 	/*	IN ORDER TO OVERCOME THE PDECISION ERRORS IN EXP(),
 				WE APPLY THE MINUS-MAXIMUM TRICK,
@@ -268,7 +268,8 @@ void CO_select_forward_2(double *prob, int *n1, int *n2,
 }
 
 void CO_select_backward_2(double *prob, int n1, int n2,
-					double *fx, int N_population, double temp){
+					double *fx, int N_population, double temp)
+{
 
 	/*	IN ORDER TO OVERCOME THE PDECISION ERRORS IN EXP(),
 				WE APPLY THE MINUS-MAXIMUM TRICK,
@@ -346,7 +347,8 @@ void CO_select_backward_2(double *prob, int n1, int n2,
 }
 
 void CO_select_forward_3(double *prob, int *n1, int *n2,
-			double *fx, int N_population, double temp){
+			double *fx, int N_population, double temp)
+{
 
 /*	IN ORDER TO OVERCOME THE PDECISION ERRORS IN EXP(),
 WE APPLY THE MINUS-MAXIMUM TRICK,
@@ -397,7 +399,8 @@ OR OTHERWISE THE PLUS-MINIMUM FOR THE NEGATIVE VALUES*/
 }
 
 void CO_select_backward_3(double *prob, int n1, int n2,
-			double *fx, int N_population, double temp){
+			double *fx, int N_population, double temp)
+{
 
 /*	IN ORDER TO OVERCOME THE PDECISION ERRORS IN EXP(),
 WE APPLY THE MINUS-MAXIMUM TRICK,
@@ -433,7 +436,8 @@ void Crossover_snooker(double **x, double *fx,
 		int N_dimension, int N_population,
 		double *theta, double *grid_points, int grid_size,
 		double temp, double scl, double *accpr_pop,
-		double *z_new) {
+		double *z_new)
+{
 
 	double temp_co ;
 
@@ -500,7 +504,8 @@ void Crossover_linear(double **x, double *fx,
 		int N_dimension, int N_population,
 		double *theta, double *grid_points, int grid_size,
 		double temp, double scl, double *accpr_pop,
-		double *z_new){
+		double *z_new)
+{
 
 	double temp_co ;
 
@@ -562,7 +567,8 @@ void Crossover_Kpoint(double **x, double *fx,
 		int N_dimension, int N_population,
 		double *theta, double *grid_points, int grid_size,
 		double temp, double *accpr_pop,
-		double *z_new_1, double *z_new_2 ) {
+		double *z_new_1, double *z_new_2 )
+{
 
 	double temp_co ;
 

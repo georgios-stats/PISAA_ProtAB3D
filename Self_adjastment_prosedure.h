@@ -17,7 +17,7 @@
 */
 
 /*
- * Georgios Karagiannis 
+ * Georgios Karagiannis
  * Postdoctoral research associate
  * Department of Mathematics, Purdue University
  * 150 N. University Street
@@ -30,47 +30,15 @@
  * Contact email: georgios.stats@gmail.com
 */
 
+void self_adj_grid_points( double *, int , double , double  ) ;
 
+void self_adj_index_search(int *, double , double *, int  ) ;
 
+void self_adj_desired_freq(double *, int , double ) ;
 
-/* declare the headers */
+void self_adj_theta_update(double *, int ,
+						double *, double *, int ,
+						double *, double , double *) ;
 
-#include <stdlib.h>
-#include <math.h>
-#include "RNG.h"
-
-/* initializes a seed */
-
-void setseedrng(unsigned long s) {
-	srand( s ) ;
-}
-
-/* DEFAULT : generates a random number on (0,1)-real-interval */
-
-double uniformrng(void) {
-	double rnd ;
-
-	do {
-		rnd = (double) ( rand() / ( RAND_MAX + 1.0 ) ) ;
-	} while ( rnd == 0.0 || rnd == 1.0 ) ;
-
-	return rnd ;
-}
-
-/* DEFAULT : generates a random number on [a,b]-real-interval */
-
-int integerrng(int a, int b) {
-		return (int) ( a +floor(uniformrng()*(b-a+1)) ) ;
-}
-
-
-
-
-
-
-
-
-
-
-
+void self_adj_theta_norm(double *, double *, double *, int , double ) ;
 
